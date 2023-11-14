@@ -21,8 +21,7 @@ const startAudio = async (context) => {
   rectifier = new AudioWorkletNode(context, 'rectifier');
   comparator = new AudioWorkletNode(context, 'comparator');
   oscillator.type = "sawtooth"
-  oscillator.frequency.value = audioContext.sampleRate/bufferLength
-  document.getElementById("oscPitch").value = oscillator.frequency.value;
+  oscillator.frequency.value = document.getElementById("oscPitch").value
   oscillator.connect(rectifier)
   oscillator.connect(comparator)
   rectifier.connect(gainRect)
