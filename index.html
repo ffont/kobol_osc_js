@@ -1,0 +1,19 @@
+<head>
+</head>
+<body>
+<h1>Kobol OSC js test</h1>
+    
+<div class="demo-box">
+    <button id="button-start" disabled>START</button>
+    <!--button id="button-stop">STOP</button-->
+</div>
+
+<canvas id="oscilloscope"></canvas>
+<br>
+Freq: <input type="range" id="oscPitch" min="30" max="60" step="0.001"><br>
+Rect thr: <input type="range" id="rectThreshold" min="0.0" max="1.0" step="0.01" value="1.0">Gain: <input type="range" id="rectGain" min="0.0" max="1.0" step="0.05" value="1.0"><br>
+Comp thr: <input type="range" id="compThreshold" min="0.0" max="1.0" step="0.01" value="1.0">Gain: <input type="range" id="compGain" min="0.0" max="1.0" step="0.05" value="1.0"><br>
+Waveform: <input type="range" id="waveform" min="0.0" max="1.0" step="0.01" value="1.0">Gain: <input type="range" id="mainGain" min="0.0" max="1.0" step="0.05" value="1.0">
+
+<script src="main.js"></script>
+</body>
