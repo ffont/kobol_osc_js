@@ -115,12 +115,12 @@ const updateWaveform = value => {
   if (value < splitPointA) {
     compGain.setValueAtTime(0.0, audioContext.currentTime);
     rectGain.setValueAtTime(1.0, audioContext.currentTime);
-    compThr.setValueAtTime(0.5, audioContext.currentTime);
+    compThr.setValueAtTime(0.0, audioContext.currentTime);  // Should this be 0.5??
     const currentSplitPosition = value / splitPointA;
     rectThr.setValueAtTime(currentSplitPosition, audioContext.currentTime);
 
   } else if (value < splitPointB) {
-    compThr.setValueAtTime(0.5, audioContext.currentTime);
+    compThr.setValueAtTime(0.0, audioContext.currentTime);  // Should this be 0.5??
     const currentSplitPosition = (value - splitPointA) / (splitPointB -  splitPointA);
     compGain.setValueAtTime(currentSplitPosition, audioContext.currentTime);
     rectGain.setValueAtTime((1.0 - currentSplitPosition), audioContext.currentTime);
