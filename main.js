@@ -124,13 +124,19 @@ const updateWaveform = value => {
     const currentSplitPosition = (value - splitPointA) / (splitPointB -  splitPointA);
     compGain.setValueAtTime(currentSplitPosition, audioContext.currentTime);
     rectGain.setValueAtTime((1.0 - currentSplitPosition), audioContext.currentTime);
+    rectThr.setValueAtTime(1, audioContext.currentTime);
 
   } else {
     compGain.setValueAtTime(1.0, audioContext.currentTime);
     rectGain.setValueAtTime(0.0, audioContext.currentTime);
     const currentSplitPosition = (value - splitPointB) / (1.0 -  splitPointB);
     compThr.setValueAtTime(currentSplitPosition, audioContext.currentTime);
+    rectThr.setValueAtTime(1, audioContext.currentTime);
   }
+  document.getElementById("rectGain").value = rectGain.value;
+  document.getElementById("compGain").value = compGain.value;
+  document.getElementById("compThreshold").value = compThr.value;
+  document.getElementById("rectThreshold").value = rectThr.value;
 }
 
 document.getElementById("waveform").oninput = (evt) => {
