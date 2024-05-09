@@ -133,10 +133,15 @@ const updateWaveform = value => {
     compThr.setValueAtTime(currentSplitPosition, audioContext.currentTime);
     rectThr.setValueAtTime(1, audioContext.currentTime);
   }
-  document.getElementById("rectGain").value = rectGain.value;
-  document.getElementById("compGain").value = compGain.value;
-  document.getElementById("compThreshold").value = compThr.value;
-  document.getElementById("rectThreshold").value = rectThr.value;
+
+  setTimeout( () => {
+    document.getElementById("rectGain").value = rectGain.value;
+    document.getElementById("compGain").value = compGain.value;
+    document.getElementById("compThreshold").value = compThr.value;
+    document.getElementById("rectThreshold").value = rectThr.value;
+  }, 50)
+
+  
 }
 
 document.getElementById("waveform").oninput = (evt) => {
